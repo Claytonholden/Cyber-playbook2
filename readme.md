@@ -70,3 +70,10 @@ git push -u origin yourname-weekNN
 
 # open a Pull Request to main (if your instructor wants PRs)
 
+## Turn-in checklist (students)
+- Add exactly one new **Topic** under Hardware/Networking/Security.
+- Include **Overview → Approach → Evidence → Reflection**.
+- Upload **1–3 screenshots** to `assets/images/` and link them.
+- Share the **live Pages URL** and (if required) a PDF export.
+- Keep filenames tidy: `YYYY-MM-topic-##.png`.
+

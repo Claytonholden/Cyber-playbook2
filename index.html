@@ -4,10 +4,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Cyber Playbook</title>
+<meta name="description" content="Clayton Holden's Cyber Playbook — hardware, networking, and security labs with evidence and reflections." />
+<link rel="canonical" href="https://claytonholden.github.io/Cyber-playbook2/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cyber Playbook — Clayton Holden" />
+<meta property="og:description" content="Topic-based portfolio: hardware, networking, security — with screenshots and reflections." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://claytonholden.github.io/Cyber-playbook2/" />
+<meta property="og:image" content="https://claytonholden.github.io/Cyber-playbook2/assets/images/cover.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cyber Playbook — Clayton Holden" />
+<meta name="twitter:description" content="Hardware, networking, and security labs with evidence." />
+<meta name="twitter:image" content="https://claytonholden.github.io/Cyber-playbook2/assets/images/cover.png" />
+
+<!-- Optional favicon -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
 <meta name="description" content="Topic-based cyber playbook: overview, approach, evidence, reflection." />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
+    <a class="skip" href="#overview">Skip to main content</a>
+
 
 <!-- Top bar -->
 <header class="topbar">
@@ -139,6 +160,30 @@
       </div>
     </section>
   </section>
+  <section class="topic">
+  <h3>Bridged vs NAT in Hypervisors</h3>
+  <div class="grid two">
+    <div>
+      <h4>Overview</h4>
+      <p>Compared NAT vs Bridged networking for VMs; validated IP assignment and reachability to LAN services.</p>
+      <h4>Approach</h4>
+      <ul>
+        <li>Created two VMs: one NAT, one Bridged</li>
+        <li>Verified <code>ipconfig /all</code> / <code>ip a</code> and default routes</li>
+        <li>Tested ping/DNS to LAN and Internet</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Evidence</h4>
+      <ul class="evidence">
+        <li><a href="assets/images/2025-11-bridgednat-01.png" target="_blank">NAT vs Bridged IPs</a></li>
+        <li><a href="assets/images/2025-11-bridgednat-02.png" target="_blank">Route table comparison</a></li>
+      </ul>
+      <h4>Reflection</h4>
+      <p>Bridged is great for lab servers reachable from the LAN; NAT is safer for isolated testing. Documented when to use each.</p>
+    </div>
+  </div>
+</section>
 
   <!-- SUBJECT: SECURITY -->
   <section id="security" class="subject">
@@ -170,11 +215,38 @@
       </div>
     </section>
   </section>
+  <section class="topic">
+  <h3>Windows Server Hardening — Quick Baseline</h3>
+  <div class="grid two">
+    <div>
+      <h4>Overview</h4>
+      <p>Applied a light hardening baseline: updates, RDP security, local policy review, and basic logging.</p>
+      <h4>Approach</h4>
+      <ul>
+        <li>Windows Update → patch level screenshots</li>
+        <li>RDP: Network Level Authentication + limited users</li>
+        <li>Local Security Policy: password policy minimum</li>
+        <li>Enabled PowerShell transcription/logging (lab scope)</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Evidence</h4>
+      <ul class="evidence">
+        <li><a href="assets/images/2025-11-harden-01.png" target="_blank">Patch level</a></li>
+        <li><a href="assets/images/2025-11-harden-02.png" target="_blank">NLA enabled</a></li>
+        <li><a href="assets/images/2025-11-harden-03.png" target="_blank">Local policy</a></li>
+      </ul>
+      <h4>Reflection</h4>
+      <p>Even a small baseline increases resilience. Next step: CIS Benchmarks mapping and exportable checklist.</p>
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div>© <span id="y"></span> • Built with GitHub Pages • Topic-first portfolio</div>
   </footer>
+<button id="backToTop" class="back-top" aria-label="Back to top">↑</button>
 
 </main>
 
@@ -196,5 +268,21 @@
   };
   document.addEventListener('scroll', onScroll, {passive:true});
 </script>
+// Back to top
+const btn = document.getElementById('backToTop');
+const toggleTop = () => btn.style.opacity = window.scrollY > 900 ? 1 : 0;
+btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+document.addEventListener('scroll', toggleTop, {passive:true});
+
+// Quick filter (search topics by text)
+const searchBox = document.createElement('input');
+searchBox.className = 'quicksearch';
+searchBox.placeholder = 'Search topics…';
+document.querySelector('#overview .pillrow').after(searchBox);
+const topics = Array.from(document.querySelectorAll('.topic'));
+searchBox.addEventListener('input', e=>{
+  const q = e.target.value.toLowerCase();
+  topics.forEach(t => t.style.display = t.innerText.toLowerCase().includes(q) ? '' : 'none');
+});
 </body>
 </html>
