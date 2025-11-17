@@ -65,7 +65,19 @@
     </div>
 
     <!-- Quick Search injected by JS after this element -->
-  </section>
+<section class="hero dashboard">
+  <h2>Student Dashboard</h2>
+  <p class="lead">Use this panel to stay organized and turn in labs correctly.</p>
+  <ul>
+    <li>📅 <strong>One Topic = One Lab</strong></li>
+    <li>🖼️ Upload screenshots to <code>assets/images/</code></li>
+    <li>📄 Add topic using the template block</li>
+    <li>🧱 Commit & Push → Site auto-updates</li>
+    <li>✅ Submit your Pages link on Blackboard</li>
+  </ul>
+</section>
+  
+</section>
 
   <!-- What Good Looks Like -->
   <section class="hero example">
@@ -172,6 +184,16 @@
       </div>
     </section>
   </section>
+<section class="hero feedback">
+  <h2>Instructor Feedback</h2>
+  <p>💡 (Instructor fills this in after grading — optional)</p>
+  <ul>
+    <li>✅ Technical accuracy:</li>
+    <li>✅ Screenshots complete:</li>
+    <li>✅ Reflection depth:</li>
+    <li>💬 Notes:</li>
+  </ul>
+</section>
 
   <!-- Footer + Edit link -->
   <footer class="footer">
@@ -221,6 +243,12 @@
     const q = e.target.value.toLowerCase();
     topics.forEach(t => t.style.display = t.innerText.toLowerCase().includes(q) ? '' : 'none');
   });
+// count topics and display total
+window.addEventListener('DOMContentLoaded', ()=>{
+  const tcount = document.querySelectorAll('.topic').length;
+  const footer = document.querySelector('.footer');
+  if(footer){ footer.insertAdjacentHTML('beforeend', `<div class="small">Total topics: ${tcount}</div>`); }
+});
 </script>
 </body>
 </html>
