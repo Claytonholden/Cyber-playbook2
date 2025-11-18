@@ -48,47 +48,35 @@
 <!-- Main content -->
 <main class="wrap">
 
-  <!-- Overview / Hero -->
-  <section id="overview" class="hero">
-    <h1>Show your work — clearly</h1>
-    <p class="lead">
-      One-page portfolio structured for students and employers. Add topics directly in GitHub:
-      each topic has an <strong>Overview</strong>, your <strong>Approach</strong>,
-      <strong>Evidence</strong> (screenshots), and a short <strong>Reflection</strong>.
-    </p>
+ <section class="hero" style="text-align:center; padding:44px 24px; border-radius:18px; border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.04), transparent), var(--panel); margin-bottom:24px;">
+  <h1 style="margin:0 0 10px; font-size:clamp(28px,4vw,44px); letter-spacing:-0.02em;">
+    Cyber Playbook
+  </h1>
+  <p style="margin:0 auto 14px; max-width:820px; color:var(--muted); font-size:clamp(16px,2.2vw,18px)">
+    A modern, single-page portfolio that documents your hands-on work in <strong>Hardware</strong>, <strong>Networking</strong>, and <strong>Security</strong>—the way employers and instructors want to see it.
+  </p>
 
-    <div class="pillrow">
-      <span class="pill">Student-friendly</span>
-      <span class="pill">Employer-ready</span>
-      <span class="pill">No build scripts</span>
-      <span class="pill">GitHub Pages</span>
-    </div>
+  <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:14px;">
+    <span class="chip">Employer-ready</span>
+    <span class="chip">No build scripts</span>
+    <span class="chip">GitHub Pages</span>
+    <span class="chip">Fast to update</span>
+  </div>
 
-    <!-- Quick Search injected by JS after this element -->
-<section class="hero dashboard">
-  <h2>Student Dashboard</h2>
-  <p class="lead">Use this panel to stay organized and turn in labs correctly.</p>
-  <ul>
-    <li>📅 <strong>One Topic = One Lab</strong></li>
-    <li>🖼️ Upload screenshots to <code>assets/images/</code></li>
-    <li>📄 Add topic using the template block</li>
-    <li>🧱 Commit & Push → Site auto-updates</li>
-    <li>✅ Submit your Pages link on Blackboard</li>
-  </ul>
-</section>
-  
+  <div class="buttons" style="display:flex; gap:12px; justify-content:center; margin-top:18px;">
+    <a class="btn" href="#subjects">Browse Topics</a>
+    <a class="btn" href="resume/ClaytonHoldenResume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+  </div>
 </section>
 
-  <!-- What Good Looks Like -->
-  <section class="hero example">
-    <h2>🌟 What Good Looks Like</h2>
-    <ul>
-      <li>✅ Each topic includes all 4 sections (Overview / Approach / Evidence / Reflection)</li>
-      <li>✅ Evidence links open real screenshots in <code>assets/images/</code></li>
-      <li>✅ Filenames are tidy: <code>YYYY-MM-topic-01.png</code></li>
-      <li>✅ Reflection ties the lab to real-world skills</li>
-    </ul>
-  </section>
+<!-- “What is a Cyber Playbook?” section -->
+<section style="border:1px solid var(--line); background:var(--panel); border-radius:18px; padding:22px; margin-bottom:24px;">
+  <h2 style="margin:0 0 6px; font-size:22px;">What is a Cyber Playbook?</h2>
+  <p style="color:var(--muted); margin:0;">
+    It’s your concise record of labs and projects—each one a <em>Topic</em> with four parts: <strong>Overview</strong>, <strong>Approach</strong>,
+    <strong>Evidence</strong> (screenshots), and a short <strong>Reflection</strong>. Together, these show not just what you did, but how you think.
+  </p>
+</section>
 
   <!-- SUBJECT: Hardware -->
   <section id="hardware" class="subject">
