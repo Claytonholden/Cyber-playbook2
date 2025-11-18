@@ -1,10 +1,3 @@
-# 🚀 Cyber Playbook
-
-A student-friendly, employer-ready portfolio template for documenting hands-on labs.  
-Everything lives in a single page (`index.html`) with consistent **Topics** under three subjects: **Hardware**, **Networking**, and **Security**.
-
----
-
 ## 🎯 What this is
 - A clean, scrollable website (GitHub Pages) that shows **what you built**, **how you built it**, and **evidence**.
 - A light structure that teaches real Git/GitHub skills without heavy tooling.
