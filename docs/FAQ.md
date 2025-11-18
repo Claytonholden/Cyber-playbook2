@@ -17,15 +17,10 @@ After enabling GitHub Pages, your URL is:
 
 https://<your-username>.github.io/<your-repo-name>/
 
-makefile
-Copy code
-
 **Example:**
 
 https://claytonholden.github.io/Cyber-playbook2/
 
-markdown
-Copy code
 
 ### 🧑‍💻 What files am I allowed to edit?
 - **Edit:** `index.html`, and add screenshots to `assets/images/`.
@@ -61,9 +56,6 @@ You probably missed a closing tag (`</section>` or `</div>`) or pasted a Topic o
 
 2025-11-windows-install-01.png
 2025-11-windows-install-02.png
-
-php-template
-Copy code
 
 - Link them in your Topic’s Evidence list, e.g.:
 
@@ -134,8 +126,6 @@ Professional filenames (lowercase, hyphenated).
 💅 How do I change colors?
 Open assets/styles.css, find the variables:
 
-css
-Copy code
 :root{
   --bg:#0b0d10;
   --panel:#0f1319;
@@ -158,16 +148,12 @@ Sky Blue: #00a8ff
 🧠 Can I change icons?
 Yes. In index.html, each subject has an emoji in the title, e.g.:
 
-html
-Copy code
 <h2 class="subject-title"><span class="icon">🧩</span> Hardware</h2>
 Swap the emoji with: 🧰 🔧 🖥️ 🌐 🔐 ⚙️ 🛰️ 🧠
 
 🖋 Can I use a different font?
 Add this line inside <head> in index.html (above your stylesheet):
 
-html
-Copy code
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 Then in assets/styles.css, change the base font to use Inter.
 
@@ -205,6 +191,4 @@ A link to your live site
 
 A screenshot of the issue
 
-makefile
-Copy code
 ::contentReference[oaicite:0]{index=0}
